@@ -1,0 +1,8 @@
+Ensure that when you access the routes like / or /create-post, the path is correctly set in the browser URL. If the URL doesn’t match one of the defined paths (like / or /create-post), it will hit the wildcard route (*), showing the 404 error.
+
+2. Fix Route Structure
+Your route setup looks correct, but let's ensure everything is well-defined. In some cases, misconfigurations in the code structure can lead to the error.
+
+Here’s an adjusted version of your code to verify the structure:
+
+Code Adjustment:

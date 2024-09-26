@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File List</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-4">File List</h1>
+        
+        <form action="/create" method="POST" class="mb-4">
+            <input type="text" name="title" placeholder="File Title" required class="border border-gray-300 p-2 mb-2 w-full rounded" />
+            <textarea name="details" placeholder="File Details" required class="border border-gray-300 p-2 mb-2  rounded"></textarea>
+
+            <button type="submit" class="bg-blue-500 text-white p-2 m-5 rounded hover:bg-blue-600">Create File</button>
+            
+        </form>
+
+        
+
+        <% if (files.length > 0) { %>
+            <div class="space-y-4">
+                <% files.forEach(function(val) { %>
+                    <div class="p-4 bg-white w-96 rounded shadow">
+                        <a href="/file/<%= val %>" class="text-blue-600 hover:underline"><%= val %></a>
+                    </div>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <h3 class="text-zinc-600">No files available</h3>
+        <% } %>
+    </div>
+</body>
+</html>
